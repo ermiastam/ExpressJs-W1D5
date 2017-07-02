@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    
+    <h3>Welcome to Info-Page</h3>
+   <link rel='stylesheet', href='/stylesheets/tableStyle.css'/>
+   <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+  </head>
+  <body>
+      <h2> Information </h2> <hr />
+      <table>
+        <thead>
+        <tr>
+         <th>Id</th>
+         <th>Name</th>
+         <th>UserName</th>
+         <th>Email</th> 
+         <th>City</th>
+         <th>ZipCode</th>
+         <th>Latitude</th>
+         <th>Longitude</th>
+         <th>Website</th>
+        </tr>    
+         </thead>
+         <tbody>
+        <% for(item of information) {%>
+                  <tr>
+         <th><%=item.id%></th>
+          <th><%=item.name%></th>
+           <th><%=item.username%></th>
+            <th><%=item.email%></th>
+            <th><%=item.address.city%></th>
+             <th><%=item.address.zipcode%></th>
+              <th><%=item.address.geo.lat%></th>
+               <th><%=item.address.geo.lng%></th>
+                <th><%=item.website%></th>
+                 
+        </tr>    
+         <%}%>
+         </tbody>    
+      </table>
+  </body>
+</html>
