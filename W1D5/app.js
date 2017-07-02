@@ -17,7 +17,7 @@ var app = express();
 //app.set('view engine', 'jade');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.set('x-powered-by', false);
+app.set('x-powered-by', true);
 app.disable('etag');
 app.set('strict routing', true);
 app.enable('case sensitive routing');
@@ -30,11 +30,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', index);
 app.use('/users', users);
 app.use('/obs',Observable );
 app.use('/async', AsyncAwait);
-app.use('/')
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
